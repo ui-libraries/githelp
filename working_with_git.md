@@ -25,7 +25,7 @@ If you have an existing git project you need to move to our master source code r
 
 	git clone [path to your existing git repository]
 
-**3)**  If this was successful, you should see a new directory in /l/librarydata/dls/git with the same name as your working directory. This new master repository, however, thinks that your working copy is the master source code. Going forward, we want this to work the other way around. You'll need to remove the origins from the new master repository. From the git bash of the master repo:
+**3)**  If this was successful, you should see a new directory in /l/librarydata/dls/git with the same name as your working copy. This new master repository, however, thinks that your working copy is the master source code. Going forward, we want this to work the other way around. You'll need to remove the origins from the new master repository. From the git bash of the master repo:
 	git remote rm origin
 
 **4)** While you're here, let's set up our `master` and `develop` branches. (In our master source code repository, `master` is always a mirror of our stable production version. `develop` is where we'll be sharing our code with each other while were in development.):
@@ -61,35 +61,39 @@ After you've created a local working repo, your daily workflow should look like 
 
 **1)**   Pull back any changes from origin/develop, so you're in sync with the most current codebase: 
 
-- if you're not there already: 
+If you're not there already: 
 
-	`git checkout develop  //this will put you in the develop branch of your local working repo`
+	git checkout develop  //this will put you in the develop branch of your local working repo
 
-- pull the latest code: 
+Pull the latest code: 
 
-	`git pull origin develop // this pulls and merges the current code from the 'develop' branch of our master repo`
+	git pull origin develop // this pulls and merges the current code from the 'develop' branch of our master repo
 
-- if there are merge conflicts:
+If there are merge conflicts:
 
-- if you are doing your work on another branch of your local working repo, do: 
+	instructions go here
 
-	`git merge [working_repo_here]`
+If you are doing your work on another branch of your local working repo, do: 
+
+	git merge [working_repo_here]
 
 **2)**   Do your work, commit often, rinse, repeat.
 
 **3)**   When you're ready (or when you've come to a good stopping place), push your code to the master development branch (please do this often, but make sure you have working code when you do):
 
-- if you've been working on a separate branch than develop: 
+If you've been working on a separate branch than develop: 
 
-	`git merge develop //this merges your code with your working repo's main branch`
+	git merge develop //this merges your code with your working repo's main branch
 
-- make sure the origin/develop branch is not checked out (if it is, then just checkout master)
+Make sure the origin/develop branch is not checked out (if it is, then just checkout the master branch).
 
-- push to origin: 
+Push to origin: 
 
-	`git push origin develop`
+	git push origin develop
 
-- if there are merge conflicts:
+If there are merge conflicts:
+
+	instructions go here
 
 **4)**   Go home. Come back tomorrow and start with step 1.
 
